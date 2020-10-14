@@ -1,0 +1,10 @@
+SELECT c1.Customer_Id,CustomerName,Course_id,
+Course_Date,
+COUNT(Customer_Course_id)
+FROM c1 JOIN c2 ON c1.Customer_id = c2.Customer_id
+GROUP BY c1.Customer_id,
+CustomerName,
+Course_id,
+Course_Date
+HAVING COUNT(Customer_Course_id) > 1
+ORDER BY Course_Date DESC;
